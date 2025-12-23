@@ -1,0 +1,5 @@
+{
+  "name": "Image2Salt",
+  "description": "UI画像をPlantUML Saltコードに変換するツールです。UIの画像を貼り付けるかアップロードすると、仕様書に適したPlantUMLコードに変換します。",
+  "requestFramePermissions": []
+}
