@@ -354,7 +354,8 @@ const App: React.FC = () => {
   const timerRef = useRef<number | null>(null);
   const isCancelledRef = useRef(false);
 
-  const [fidelity, setFidelity] = useState(50);
+  // デフォルトの再現レベルを「詳細 (100)」に設定
+  const [fidelity, setFidelity] = useState(100);
   const [selectedModel, setSelectedModel] = useState('gemini-3-flash-preview');
   const [modelOptions, setModelOptions] = useState<{ value: string; label: string }[]>([
     { label: 'Gemini 3.0 Flash Preview', value: 'gemini-3-flash-preview' },
@@ -441,9 +442,7 @@ const App: React.FC = () => {
               hasResult={!!saltCode || !!error}
             />
             {saltCode && (
-              <div className="animate-in fade-in slide-in-from-bottom-4 duration-300">
-                <RefinementControl onRefine={handleRefine} isLoading={isLoading} />
-              </div>
+              <RefinementControl onRefine={handleRefine} isLoading={isLoading} />
             )}
           </div>
           <div className="space-y-8 flex flex-col">
